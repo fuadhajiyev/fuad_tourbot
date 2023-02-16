@@ -25,9 +25,9 @@ public class QuestionTranslation {
     @JoinColumn(name = "question_id", referencedColumnName = "id")
     Question question;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "language_id", referencedColumnName = "id")
-    private List<Language> language;
+    private Language language;
 
 
 }
