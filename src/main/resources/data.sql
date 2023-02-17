@@ -1,58 +1,7 @@
+-- 1 - en
+-- 2 - az
+-- 3 - ru
 
-
-
-INSERT INTO questions VALUES (2,'Necə bir təklif səni maraqlandırır?💭',2);
-INSERT INTO question_translation VALUES (4,'Necə bir təklif səni maraqlandırır?💭',2,2);
-INSERT INTO question_translation VALUES (5,'What kind of offer do you like to receive?💭',2,1);
-INSERT INTO question_translation VALUES (6,'Какое предложение вас интересует? 💭',2,3);
-
-INSERT INTO questions VALUES (3,'Ölkədaxili yoxsa Ölkəxarici?',2);
-INSERT INTO question_translation VALUES (7,'Azərbaycan','Ölkədaxili yoxsa Ölkəxarici?',3,2);
-INSERT INTO question_translation VALUES (8,'country','English','Domestic or Abroad?',3,1);
-INSERT INTO question_translation VALUES (9,'country','Русский','Внутри страны или за границей?',3,3);
-
-INSERT INTO questions VALUES (4,'Səyahət tipi?',2);
-INSERT INTO question_translation VALUES (10,'Səyahət tipi?',4,2);
-INSERT INTO question_translation VALUES (11,'Səyahət tipi?',4,1);
-INSERT INTO question_translation VALUES (12,'Səyahət tipi?',4,3);
-
-INSERT INTO questions VALUES (5,'Hara getmək istəyirsən? 🏞?',2);
-INSERT INTO question_translation VALUES (13,'Hara getmək istəyirsən? 🏞?',5,2);
-INSERT INTO question_translation VALUES (14,'Do you know exact destination? 🏞',5,1);
-INSERT INTO question_translation VALUES (15,'Русский','Знаешь куда хочешь поехать? 🏞',5,3);
-
-INSERT INTO questions VALUES (6,'Hansı şəhərdən yola düşəcəksən?📍',1);
-INSERT INTO question_translation VALUES (16,'Hansı şəhərdən yola düşəcəksən?📍',6,2);
-INSERT INTO question_translation VALUES (17,'Which city you are traveling from?📍',6,1);
-INSERT INTO question_translation VALUES (18,'Русский','Из какого города выезжаешь?📍',6,3);
-
-INSERT INTO questions VALUES (7,'Səyahətin başlanma tarixini seç: 📅',1);
-INSERT INTO question_translation VALUES (19,'Səyahətin başlanma tarixini seç: 📅',7,2);
-INSERT INTO question_translation VALUES (20,'Choose start date of your journey: 📅',7,1);
-INSERT INTO question_translation VALUES (21,'Выбери дату начала поездки: 📅',7,3);
-
-INSERT INTO questions VALUES (8,'Səyahətin bitmə tarixini seç  🏁',1);
-INSERT INTO question_translation VALUES (22,'Səyahətin bitmə tarixini seç  🏁',8,2);
-INSERT INTO question_translation VALUES (23,'Choose end date of your journey 🏁',8,1);
-INSERT INTO question_translation VALUES (24,'Выбери дату завершения поездки 🏁',8,3);
-
-
-INSERT INTO questions VALUES (9,'Kim-kim gedəcəksiz? 👨‍👩‍👧‍👦 Uşaqlarla səyahət etdikdə, onların yaşını qeyd etməyi unutma 😇 (məs. "2 böyük, 1 uşaq - 6 yaş") ',1);
-INSERT INTO question_translation VALUES (25,'Kim-kim gedəcəksiz? 👨‍👩‍👧‍👦 Uşaqlarla səyahət etdikdə, onların yaşını qeyd etməyi unutma 😇 (məs. "2 böyük, 1 uşaq - 6 yaş") ',9,2);
-INSERT INTO question_translation VALUES (26,'How many people are going to travel? 👨‍👩‍👧‍👦 When traveling with children, be sure to note their age 😇 (e.g. "2 adults, 1 child - 6 y.o.")',9,1);
-INSERT INTO question_translation VALUES (27,'Русский','Сколько человек поедет? 👨‍👩‍👧‍👦  Если путешествуешь с детьми, обязательно укажи их возраст 😇 (напр. «2 взрослых, 1 ребенок - 6 лет»)',9,3);
-
-INSERT INTO questions VALUES (10,'Səyahət üçün nə qədər büdcə nəzərdə tutmusan 💰? (AZN ilə)',1);
-INSERT INTO question_translation VALUES (28,'Səyahət üçün nə qədər büdcə nəzərdə tutmusan 💰? (AZN ilə)',10,2);
-INSERT INTO question_translation VALUES (29,'The budget you plan to spend on this journey? 💰',10,1 );
-INSERT INTO question_translation VALUES (30,'Укажи бюджет, который  планируешь потратить на отдых? 💰',10,3);
-
-INSERT INTO questions VALUES (11,'Sorğunu aldım🥳.Ən qısa zamanda istəyinə uyğun təkliflər hazırlayıb göndərəcəm .😊');
-INSERT INTO question_translation VALUES (31,'Sorğunu aldım🥳.Ən qısa zamanda istəyinə uyğun təkliflər hazırlayıb göndərəcəm .😊');
-INSERT INTO question_translation VALUES (32,'I received your request🥳. My assistants are currently unavailable. I will prepare and send you offers as soon as possible.😊');
-INSERT INTO question_translation VALUES (33,'Я принял твой запрос🥳. В данный момент мои помощники недоступны. В кратчайшее время я обязательно подготовлю и отправлю тебе предложения 😊');
-
-/*
 INSERT INTO languages VALUES (1, 'En');
 INSERT INTO languages VALUES (2, 'Az');
 INSERT INTO languages VALUES (3, 'Ru');
@@ -87,4 +36,92 @@ INSERT INTO option_translations (text, language_id, option_id) VALUES ('Any type
 INSERT INTO option_translations (text, language_id, option_id) VALUES ('Любой тип', 3, 4);
 
 
- */
+INSERT INTO questions
+VALUES (2, 'Necə bir təklif səni maraqlandırır?💭', 2);
+INSERT INTO question_translation
+VALUES (4, 'Necə bir təklif səni maraqlandırır?💭', 2, 2);
+INSERT INTO question_translation
+VALUES (5, 'What kind of offer do you like to receive?💭', 1, 2);
+INSERT INTO question_translation
+VALUES (6, 'Какое предложение вас интересует? 💭', 3, 2);
+
+INSERT INTO questions
+VALUES (3, 'Ölkədaxili yoxsa Ölkəxarici?', 2);
+INSERT INTO question_translation
+VALUES (7, 'Ölkədaxili yoxsa Ölkəxarici?', 2, 3);
+INSERT INTO question_translation
+VALUES (8, 'Domestic or Abroad?', 1, 3);
+INSERT INTO question_translation
+VALUES (9, 'Внутри страны или за границей?', 3, 3);
+
+INSERT INTO questions
+VALUES (4, 'Səyahət tipi?', 2);
+INSERT INTO question_translation
+VALUES (10, 'Səyahət tipi?', 2, 4);
+INSERT INTO question_translation
+VALUES (11, 'Type of travel?', 1, 4);
+INSERT INTO question_translation
+VALUES (12, 'Тип путешествия?', 3, 4);
+
+INSERT INTO questions
+VALUES (5, 'Hara getmək istəyirsən? 🏞?', 2);
+INSERT INTO question_translation
+VALUES (13, 'Hara getmək istəyirsən? 🏞?', 2, 5);
+INSERT INTO question_translation
+VALUES (14, 'Do you know exact destination? 🏞', 1, 5);
+INSERT INTO question_translation
+VALUES (15, 'Знаешь куда хочешь поехать? 🏞', 3, 5);
+
+INSERT INTO questions
+VALUES (6, 'Hansı şəhərdən yola düşəcəksən?📍', 1);
+INSERT INTO question_translation
+VALUES (16, 'Hansı şəhərdən yola düşəcəksən?📍', 2, 6);
+INSERT INTO question_translation
+VALUES (17, 'Which city you are traveling from?📍', 1, 6);
+INSERT INTO question_translation
+VALUES (18, 'Из какого города выезжаешь?📍', 3, 6);
+
+INSERT INTO questions
+VALUES (7, 'Səyahətin başlanma tarixini seç: 📅', 1);
+INSERT INTO question_translation
+VALUES (19, 'Səyahətin başlanma tarixini seç: 📅', 2, 7);
+INSERT INTO question_translation
+VALUES (20, 'Choose start date of your journey: 📅', 1, 7);
+INSERT INTO question_translation
+VALUES (21, 'Выбери дату начала поездки: 📅', 3, 7);
+
+INSERT INTO questions
+VALUES (8, 'Səyahətin bitmə tarixini seç  🏁', 1);
+INSERT INTO question_translation
+VALUES (22, 'Səyahətin bitmə tarixini seç  🏁', 2, 8);
+INSERT INTO question_translation
+VALUES (23, 'Choose end date of your journey 🏁', 1, 8);
+INSERT INTO question_translation
+VALUES (24, 'Выбери дату завершения поездки 🏁', 3, 8);
+
+
+INSERT INTO questions
+VALUES (9,
+        'Kim-kim gedəcəksiz? 👨‍👩‍👧‍👦 Uşaqlarla səyahət etdikdə, onların yaşını qeyd etməyi unutma 😇 (məs. "2 böyük, 1 uşaq - 6 yaş") ',
+        1);
+INSERT INTO question_translation
+VALUES (25,
+        'Kim-kim gedəcəksiz? 👨‍👩‍👧‍👦 Uşaqlarla səyahət etdikdə, onların yaşını qeyd etməyi unutma 😇 (məs. "2 böyük, 1 uşaq - 6 yaş") ',
+        2, 9);
+INSERT INTO question_translation
+VALUES (26,
+        'How many people are going to travel? 👨‍👩‍👧‍👦 When traveling with children, be sure to note their age 😇 (e.g. "2 adults, 1 child - 6 y.o.")',
+        1, 9);
+INSERT INTO question_translation
+VALUES (27,
+        'Сколько человек поедет? 👨‍👩‍👧‍👦  Если путешествуешь с детьми, обязательно укажи их возраст 😇 (напр. «2 взрослых, 1 ребенок - 6 лет»)',
+        3, 9);
+
+INSERT INTO questions
+VALUES (10, 'Səyahət üçün nə qədər büdcə nəzərdə tutmusan 💰? (AZN ilə)', 1);
+INSERT INTO question_translation
+VALUES (28, 'Səyahət üçün nə qədər büdcə nəzərdə tutmusan 💰? (AZN ilə)', 2, 10);
+INSERT INTO question_translation
+VALUES (29, 'The budget you plan to spend on this journey? 💰', 1, 10);
+INSERT INTO question_translation
+VALUES (30, 'Укажи бюджет, который  планируешь потратить на отдых? 💰', 3, 10);
