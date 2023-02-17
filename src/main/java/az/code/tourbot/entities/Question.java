@@ -31,7 +31,7 @@ public class Question {
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "question_id", referencedColumnName = "id")
-    private Set<Option> option;
+    private Set<Option> options;
 
 
 

@@ -19,7 +19,7 @@ public class QuestionType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
+    @Enumerated(EnumType.STRING)
     private QuestionEnums questionType;
 
 }
