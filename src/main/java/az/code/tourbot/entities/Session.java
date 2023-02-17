@@ -1,5 +1,6 @@
 package az.code.tourbot.entities;
 
+import az.code.tourbot.enums.LanguageCode;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -16,4 +17,6 @@ public class Session implements Serializable {
     @Id
     private Long clientId;
     private Long chatId;
+    private LanguageCode languageCode;
+    private Question currentQuestion;
 }

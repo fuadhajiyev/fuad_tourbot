@@ -6,7 +6,15 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 @Service
-public class TourServiceImpl implements TourService{
+public class TourServiceImpl implements TourService {
+
+    private SessionService sessionService;
+    private QuestionService questionService;
+
+    public TourServiceImpl(SessionService sessionService, QuestionService questionService) {
+        this.sessionService = sessionService;
+        this.questionService = questionService;
+    }
 
     @Override
     public SendMessage onUpdateReceived(Update update) {
@@ -15,15 +23,39 @@ public class TourServiceImpl implements TourService{
 
     @Override
     public SendMessage handleCommand(Message message) {
-        String chatId = message.getChatId().toString();
-        String clientId = message.getFrom().getId().toString();
+        Long chatId = message.getChatId();
+        Long clientId = message.getFrom().getId();
 
         if (message.getText().equalsIgnoreCase("/start")) {
-            return new SendMessage(chatId, "Started!");
+            if (sessionService.hasSession(clientId)) {
+                return new SendMessage(chatId.toString(), "You have already started!");
+            }
+
+            sessionService.createSession(message.getChatId(), clientId);
+            return questionService.prepareLanguageQuestion(chatId);
+
         } else if (message.getText().equalsIgnoreCase("/stop")) {
-            return new SendMessage(chatId, "Stopped!");
+
+            if (sessionService.hasSession(clientId)) {
+                sessionService.deleteSession(clientId);
+                return new SendMessage(chatId.toString(), "Session Stopped!");
+            }
+
+            return new SendMessage(chatId.toString(), "You have not started yet");
         }
 
-        return new SendMessage(chatId, "Incorrect Command");
+        return handleMessage(message);
     }
+
+
+    private SendMessage handleMessage(Message message) {
+        Long chatId = message.getChatId();
+        Long clientId = message.getFrom().getId();
+        String text = message.getText();
+
+
+        return new SendMessage(chatId.toString(), "Incorrect Command");
+    }
+
+
 }
