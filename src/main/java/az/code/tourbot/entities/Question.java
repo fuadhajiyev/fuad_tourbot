@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -30,7 +31,7 @@ public class Question {
 
     @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "question_id", referencedColumnName = "id")
-    private List<Option> option;
+    private Set<Option> option;
 
 
 
