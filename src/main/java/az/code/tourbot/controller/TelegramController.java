@@ -1,6 +1,6 @@
 package az.code.tourbot.controller;
 
-import az.code.tourbot.services.TourService;
+import az.code.tourbot.services.interfaces.TourService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -6,6 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "telegrambot")
 @Data
 public class TelegramBotConfig {
+
     private String webhookUrl;
     private String token;
 }

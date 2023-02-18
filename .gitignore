@@ -18,7 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
-
+db_credentials.txt
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

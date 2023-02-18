@@ -1,5 +1,8 @@
 package az.code.tourbot.services;
 
+import az.code.tourbot.services.interfaces.QuestionService;
+import az.code.tourbot.services.interfaces.SessionService;
+import az.code.tourbot.services.interfaces.TourService;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;

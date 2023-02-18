@@ -2,6 +2,7 @@ package az.code.tourbot.services;
 
 import az.code.tourbot.entities.Session;
 import az.code.tourbot.repositories.redis.SessionRepository;
+import az.code.tourbot.services.interfaces.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

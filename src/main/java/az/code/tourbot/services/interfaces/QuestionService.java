@@ -1,4 +1,4 @@
-package az.code.tourbot.services;
+package az.code.tourbot.services.interfaces;
 
 import az.code.tourbot.entities.Question;
 import az.code.tourbot.enums.LanguageCode;

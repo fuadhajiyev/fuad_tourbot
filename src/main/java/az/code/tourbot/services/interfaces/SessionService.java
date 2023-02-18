@@ -1,4 +1,4 @@
-package az.code.tourbot.services;
+package az.code.tourbot.services.interfaces;
 
 public interface SessionService {
     boolean hasSession(Long clientId);
