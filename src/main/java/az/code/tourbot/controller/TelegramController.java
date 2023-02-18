@@ -23,7 +23,7 @@ public class TelegramController {
 
     @PostMapping("/")
     public BotApiMethod<?> onUpdateReceived(@RequestBody Update update) {
-        log.info("onUpdateReceived {}", update.getMessage().getText());
+        log.info("onUpdateReceived {}", update.getMessage());
         return this.tourService.onUpdateReceived(update);
     }
 }

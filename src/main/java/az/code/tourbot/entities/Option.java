@@ -11,7 +11,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "options")
@@ -23,7 +22,7 @@ public class Option {
     @Column(name = "option_text")
     private String option_text;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "option")
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "option_id")
     private Set<OptionTranslation> optionTranslation;
-
 }

@@ -1,12 +1,12 @@
 package az.code.tourbot.services;
 
-import az.code.tourbot.services.interfaces.QuestionService;
-import az.code.tourbot.services.interfaces.SessionService;
-import az.code.tourbot.services.interfaces.TourService;
 import az.code.tourbot.entities.Option;
 import az.code.tourbot.entities.Question;
 import az.code.tourbot.enums.LanguageCode;
 import az.code.tourbot.enums.QuestionType;
+import az.code.tourbot.services.interfaces.QuestionService;
+import az.code.tourbot.services.interfaces.SessionService;
+import az.code.tourbot.services.interfaces.TourService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -32,7 +32,11 @@ public class TourServiceImpl implements TourService {
 
     @Override
     public SendMessage onUpdateReceived(Update update) {
-        return handleCommand(update.getMessage());
+        if (update.hasMessage() && update.getMessage().hasText()) {
+            return handleCommand(update.getMessage());
+        }
+
+        return null;
     }
 
     @Override
@@ -79,15 +83,22 @@ public class TourServiceImpl implements TourService {
                 sessionService.setLanguage(clientId, LanguageCode.valueOf(text));
                 // get first question
                 Question question = questionService.getFirstQuestion();
+                log.info("The first question is: {}", question);
                 sessionService.setCurrentQuestionId(clientId, question.getId());
                 log.info("Set questionId: {} into session", question);
                 // prepare question
-                return questionService.prepareQuestion(chatId, LanguageCode.valueOf(text), question);
+                SendMessage sendMessage = questionService.prepareQuestion(chatId, LanguageCode.valueOf(text), question);
+                log.info("sendMessage: {}", sendMessage.getText());
+                return sendMessage;
             }
         } else {
             // get current question
             Integer questionId = sessionService.getCurrentQuestionId(clientId);
             log.info("get current questionId: {} from session", questionId);
+            if (questionId == null) {
+                return new SendMessage(chatId.toString(), "Xəta baş verdi");
+            }
+
             Question question = questionService.getQuestionById(questionId);
             LanguageCode languageCode = sessionService.getLanguage(clientId);
 

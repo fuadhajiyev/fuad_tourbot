@@ -108,7 +108,7 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Question getQuestionById(@NonNull Integer id) {
+     public Question getQuestionById(@NonNull Integer id) {
         Optional<Question> optionalQuestion = questionRepository.findById(id);
         return optionalQuestion.orElse(null);
     }

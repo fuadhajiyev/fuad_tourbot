@@ -24,10 +24,6 @@ public class OptionTranslation {
     @Column(name = "text")
     private String text;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "option_id", referencedColumnName = "id")
-    private Option option;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "language_code")
     private LanguageCode languageCode;

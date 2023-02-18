@@ -14,7 +14,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "questions")
@@ -29,13 +28,12 @@ public class Question implements Serializable {
     private QuestionType questionType;
 
 
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "question_id", referencedColumnName = "id")
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "question_id")
     private Set<Option> options;
 
 
-    // one to may relationship with question translation
-    @OneToMany (fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "question_id", referencedColumnName = "id")
+    // one to many relationship with question translation
+    @OneToMany(fetch = FetchType.EAGER,  mappedBy = "question")
     private List<QuestionTranslation> questionTranslations;
 }
