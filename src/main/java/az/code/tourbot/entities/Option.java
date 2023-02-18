@@ -23,8 +23,7 @@ public class Option {
     @Column(name = "option_text")
     private String option_text;
 
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "option")
-    private Set<OptionTranslation> OptionTranslation;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "option")
+    private Set<OptionTranslation> optionTranslation;
 
 }

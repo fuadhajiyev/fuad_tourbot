@@ -1,5 +1,6 @@
 package az.code.tourbot.entities;
 
+import az.code.tourbot.enums.LanguageCode;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,12 +28,8 @@ public class OptionTranslation {
     @JoinColumn(name = "option_id", referencedColumnName = "id")
     private Option option;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "language_id", referencedColumnName = "id")
-    private Language language;
-
-
-
-
+    @Enumerated(EnumType.STRING)
+    @Column(name = "language_code")
+    private LanguageCode languageCode;
 }
 

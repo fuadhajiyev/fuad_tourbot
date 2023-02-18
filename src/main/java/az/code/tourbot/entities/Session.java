@@ -18,5 +18,5 @@ public class Session implements Serializable {
     private Long clientId;
     private Long chatId;
     private LanguageCode languageCode;
-    private Question currentQuestion;
+    private Integer currentQuestionId;
 }

@@ -1,5 +1,6 @@
 package az.code.tourbot.entities;
 
+import az.code.tourbot.enums.LanguageCode;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,9 +22,7 @@ public class QuestionTranslation {
     @JoinColumn(name = "question_id", referencedColumnName = "id")
     Question question;
 
-    @ManyToOne
-    @JoinColumn(name = "language_id", referencedColumnName = "id")
-    private Language language;
-
-
+    @Enumerated(EnumType.STRING)
+    @Column(name = "language_code")
+    private LanguageCode languageCode;
 }

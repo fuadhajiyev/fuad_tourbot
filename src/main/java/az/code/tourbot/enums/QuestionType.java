@@ -1,6 +1,6 @@
 package az.code.tourbot.enums;
 
-public enum QuestionEnums {
+public enum QuestionType {
     TEXT,
     OPTION
 }
